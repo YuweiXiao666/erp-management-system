@@ -20,6 +20,15 @@ app.use(express.json());
 
 app.use(logger);
 
+// API 首頁
+app.get("/", (req, res) => {
+  res.json({
+    project: "ERP Management System",
+    status: "running",
+    health_check: "/api/health",
+  });
+});
+
 // 檢查
 app.get("/api/health", (req, res) => {
   res.json({
