@@ -1,6 +1,6 @@
 # ERP Management System
 
-A full-stack ERP (Enterprise Resource Planning) system for managing inventory, sales, purchases, customers, suppliers, and dashboard analytics. Built with React, Node.js, Express, and Supabase.
+A full-stack ERP (Enterprise Resource Planning) system for managing inventory, sales, purchases, customers, suppliers, and dashboard analytics. Built with React, Node.js, Express, and Supabase
 
 ---
 
