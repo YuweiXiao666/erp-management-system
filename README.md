@@ -90,6 +90,10 @@ SUPABASE_URL=your_supabase_url
 SUPABASE_ANON_KEY=your_supabase_key
 PORT=5000
 
+### Frontend (.env)
+
+VITE_API_URL=http://localhost:5000
+
 ---
 
 ## API Endpoints
