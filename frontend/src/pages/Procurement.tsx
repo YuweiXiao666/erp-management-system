@@ -30,9 +30,9 @@ export function Procurement() {
   const fetchData = async () => {
     try {
       const [productsRes, suppliersRes, ordersRes] = await Promise.all([
-        fetch("http://localhost:5000/api/products"),
-        fetch("http://localhost:5000/api/suppliers"),
-        fetch("http://localhost:5000/api/purchases"),
+        fetch(`${import.meta.env.VITE_API_URL}/api/products`),
+        fetch(`${import.meta.env.VITE_API_URL}/api/suppliers`),
+        fetch(`${import.meta.env.VITE_API_URL}/api/purchases`),
       ]);
 
       const products = await productsRes.json();
@@ -65,7 +65,7 @@ export function Procurement() {
       const poCount = orders.length + 1;
       const poNumber = `PO-${new Date().getFullYear()}-${String(poCount).padStart(3, "0")}`;
 
-      const response = await fetch("http://localhost:5000/api/purchases", {
+      const response = await fetch(`${import.meta.env.VITE_API_URL}/api/purchases`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -105,7 +105,7 @@ export function Procurement() {
 
     try {
       const response = await fetch(
-        `http://localhost:5000/api/purchases/${id}/status`,
+        `${import.meta.env.VITE_API_URL}/api/purchases/${id}/status`,
         {
           method: "PATCH",
           headers: {

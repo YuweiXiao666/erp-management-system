@@ -16,7 +16,7 @@ export function Inventory() {
 
   const fetchProducts = async () => {
     try {
-      const response = await fetch("http://localhost:5000/api/products");
+      const response = await fetch(`${import.meta.env.VITE_API_URL}/api/products`);
       const data = await response.json();
       setProducts(data);
     } catch (err) {
@@ -29,7 +29,7 @@ export function Inventory() {
   const adjustStock = async (productId: string, adjustment: number) => {
     try {
       const response = await fetch(
-        `http://localhost:5000/api/products/${productId}/stock`,
+        `${import.meta.env.VITE_API_URL}/api/products/${productId}/stock`,
         {
           method: "PATCH",
           headers: {

@@ -29,9 +29,9 @@ export function Sales() {
   const fetchData = async () => {
     try {
       const [productsRes, customersRes, ordersRes] = await Promise.all([
-        fetch("http://localhost:5000/api/products"),
-        fetch("http://localhost:5000/api/customers"),
-        fetch("http://localhost:5000/api/sales"),
+        fetch(`${import.meta.env.VITE_API_URL}/api/products`),
+        fetch(`${import.meta.env.VITE_API_URL}/api/customers`),
+        fetch(`${import.meta.env.VITE_API_URL}/api/sales`),
       ]);
 
       const products = await productsRes.json();
@@ -63,21 +63,24 @@ export function Sales() {
       const soCount = orders.length + 1;
       const soNumber = `SO-${new Date().getFullYear()}-${String(soCount).padStart(3, "0")}`;
 
-      const response = await fetch("http://localhost:5000/api/sales", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
+      const response = await fetch(
+        `${import.meta.env.VITE_API_URL}/api/sales`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            so_number: soNumber,
+            customer_id: formData.customer_id || null,
+            product_id: formData.product_id,
+            product_name: product.name,
+            quantity,
+            unit_price: product.unit_price,
+            total_amount: totalAmount,
+          }),
         },
-        body: JSON.stringify({
-          so_number: soNumber,
-          customer_id: formData.customer_id || null,
-          product_id: formData.product_id,
-          product_name: product.name,
-          quantity,
-          unit_price: product.unit_price,
-          total_amount: totalAmount,
-        }),
-      });
+      );
 
       if (!response.ok) {
         const errorData = await response.json();
@@ -100,7 +103,7 @@ export function Sales() {
 
     try {
       const response = await fetch(
-        `http://localhost:5000/api/sales/${id}/status`,
+        `${import.meta.env.VITE_API_URL}/api/sales/${id}/status`,
         {
           method: "PATCH",
           headers: {
