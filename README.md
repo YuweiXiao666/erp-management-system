@@ -4,6 +4,10 @@ A full-stack ERP (Enterprise Resource Planning) system for managing inventory, s
 
 ---
 
+## Live Demo
+- Frontend: https://erp-management-system-delta.vercel.app/
+- Backend API: https://erp-management-system-wc85.onrender.com/
+
 ## Features
 
 ### Inventory Management
@@ -46,6 +50,10 @@ Database
 - Supabase (PostgreSQL)
 - SQL migrations for schema management
 
+Deployment
+- Vercel (Frontend Hosting)
+- Render (Backend Hosting)
+
 ---
 
 ## Project Structure
@@ -59,14 +67,18 @@ supabase/ - Database migrations and schema
 ## Installation
 
 ### Backend
+```bash
 cd backend
 npm install
 npm run dev
+```
 
 ### Frontend
+```bash
 cd frontend
 npm install
 npm run dev
+```
 
 ---
 
