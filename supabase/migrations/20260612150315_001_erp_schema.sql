@@ -62,42 +62,42 @@ CREATE TABLE sales_orders (
   updated_at TIMESTAMPTZ DEFAULT NOW()
 );
 
--- Enable RLS
-ALTER TABLE products ENABLE ROW LEVEL SECURITY;
-ALTER TABLE suppliers ENABLE ROW LEVEL SECURITY;
-ALTER TABLE customers ENABLE ROW LEVEL SECURITY;
-ALTER TABLE purchase_orders ENABLE ROW LEVEL SECURITY;
-ALTER TABLE sales_orders ENABLE ROW LEVEL SECURITY;
+-- -- Enable RLS
+-- ALTER TABLE products ENABLE ROW LEVEL SECURITY;
+-- ALTER TABLE suppliers ENABLE ROW LEVEL SECURITY;
+-- ALTER TABLE customers ENABLE ROW LEVEL SECURITY;
+-- ALTER TABLE purchase_orders ENABLE ROW LEVEL SECURITY;
+-- ALTER TABLE sales_orders ENABLE ROW LEVEL SECURITY;
 
--- RLS Policies for products
-CREATE POLICY "select_products" ON products FOR SELECT USING (true);
-CREATE POLICY "insert_products" ON products FOR INSERT WITH CHECK (true);
-CREATE POLICY "update_products" ON products FOR UPDATE USING (true) WITH CHECK (true);
-CREATE POLICY "delete_products" ON products FOR DELETE USING (true);
+-- -- RLS Policies for products
+-- CREATE POLICY "select_products" ON products FOR SELECT USING (true);
+-- CREATE POLICY "insert_products" ON products FOR INSERT WITH CHECK (true);
+-- CREATE POLICY "update_products" ON products FOR UPDATE USING (true) WITH CHECK (true);
+-- CREATE POLICY "delete_products" ON products FOR DELETE USING (true);
 
--- RLS Policies for suppliers
-CREATE POLICY "select_suppliers" ON suppliers FOR SELECT USING (true);
-CREATE POLICY "insert_suppliers" ON suppliers FOR INSERT WITH CHECK (true);
-CREATE POLICY "update_suppliers" ON suppliers FOR UPDATE USING (true) WITH CHECK (true);
-CREATE POLICY "delete_suppliers" ON suppliers FOR DELETE USING (true);
+-- -- RLS Policies for suppliers
+-- CREATE POLICY "select_suppliers" ON suppliers FOR SELECT USING (true);
+-- CREATE POLICY "insert_suppliers" ON suppliers FOR INSERT WITH CHECK (true);
+-- CREATE POLICY "update_suppliers" ON suppliers FOR UPDATE USING (true) WITH CHECK (true);
+-- CREATE POLICY "delete_suppliers" ON suppliers FOR DELETE USING (true);
 
--- RLS Policies for customers
-CREATE POLICY "select_customers" ON customers FOR SELECT USING (true);
-CREATE POLICY "insert_customers" ON customers FOR INSERT WITH CHECK (true);
-CREATE POLICY "update_customers" ON customers FOR UPDATE USING (true) WITH CHECK (true);
-CREATE POLICY "delete_customers" ON customers FOR DELETE USING (true);
+-- -- RLS Policies for customers
+-- CREATE POLICY "select_customers" ON customers FOR SELECT USING (true);
+-- CREATE POLICY "insert_customers" ON customers FOR INSERT WITH CHECK (true);
+-- CREATE POLICY "update_customers" ON customers FOR UPDATE USING (true) WITH CHECK (true);
+-- CREATE POLICY "delete_customers" ON customers FOR DELETE USING (true);
 
--- RLS Policies for purchase_orders
-CREATE POLICY "select_purchase_orders" ON purchase_orders FOR SELECT USING (true);
-CREATE POLICY "insert_purchase_orders" ON purchase_orders FOR INSERT WITH CHECK (true);
-CREATE POLICY "update_purchase_orders" ON purchase_orders FOR UPDATE USING (true) WITH CHECK (true);
-CREATE POLICY "delete_purchase_orders" ON purchase_orders FOR DELETE USING (true);
+-- -- RLS Policies for purchase_orders
+-- CREATE POLICY "select_purchase_orders" ON purchase_orders FOR SELECT USING (true);
+-- CREATE POLICY "insert_purchase_orders" ON purchase_orders FOR INSERT WITH CHECK (true);
+-- CREATE POLICY "update_purchase_orders" ON purchase_orders FOR UPDATE USING (true) WITH CHECK (true);
+-- CREATE POLICY "delete_purchase_orders" ON purchase_orders FOR DELETE USING (true);
 
--- RLS Policies for sales_orders
-CREATE POLICY "select_sales_orders" ON sales_orders FOR SELECT USING (true);
-CREATE POLICY "insert_sales_orders" ON sales_orders FOR INSERT WITH CHECK (true);
-CREATE POLICY "update_sales_orders" ON sales_orders FOR UPDATE USING (true) WITH CHECK (true);
-CREATE POLICY "delete_sales_orders" ON sales_orders FOR DELETE USING (true);
+-- -- RLS Policies for sales_orders
+-- CREATE POLICY "select_sales_orders" ON sales_orders FOR SELECT USING (true);
+-- CREATE POLICY "insert_sales_orders" ON sales_orders FOR INSERT WITH CHECK (true);
+-- CREATE POLICY "update_sales_orders" ON sales_orders FOR UPDATE USING (true) WITH CHECK (true);
+-- CREATE POLICY "delete_sales_orders" ON sales_orders FOR DELETE USING (true);
 
 -- Function to update updated_at timestamp
 CREATE OR REPLACE FUNCTION update_updated_at_column()
